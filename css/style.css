@@ -1,0 +1,257 @@
+/* Start Variables */
+:root {
+    /* Primary Color */
+    --orange: hsl(25, 97%, 53%);
+    /* Netural Colors */
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+    background-color: var(--very-dark-blue);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content>div {
+    width: 375px;
+    border-radius: 25px;
+    background-color: var(--dark-blue);
+    padding: 25px;
+}
+
+/* Start Rating Section */
+.rating .icon {
+    background-color: var(--medium-grey);
+    width: fit-content;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rating .icon img {
+    padding: 12px;
+}
+
+.rating .text {
+    margin-bottom: 20px;
+}
+
+.rating .text h2 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.rating .text p {
+    color: var(--light-grey);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.rating .rate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.rating .rate .number {
+    border-radius: 50%;
+    background-color: var(--medium-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    color: var(--dark-blue);
+    transition: color .5s, background-color .5s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.rating .rate .number:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.rating .rate .selected {
+    background-color: hsl(217deg 3% 72%);
+    color: var(--white);
+}
+
+.rating .rate .selected:hover {
+    background-color: hsl(217deg 3% 72%);
+    color: var(--white);
+}
+
+.rating a {
+    width: 100%;
+    color: var(--white);
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--orange);
+    border-radius: 23px;
+    font-weight: bold;
+    transition: color .5s, background-color .5s;
+}
+
+.rating a:hover {
+    color: var(--orange);
+    background-color: var(--white);
+}
+
+/* End Rating Section */
+/* Start Tanks Section */
+.thanks .image {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.thanks .image img {
+    margin: 0 auto 20px;
+}
+
+.thanks .image p {
+    padding: 5px 14px;
+    background-color: hsl(217deg 9% 26%);
+    color: var(--orange);
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.thanks .info {
+    text-align: center;
+}
+
+.thanks .info h2 {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.thanks .info p {
+    margin: 0 18px 20px;
+    font-size: 15px;
+    color: var(--medium-grey);
+}
+
+/* End Tanks Section */
+/* Start Attribution */
+.attribution {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+@media (max-width:573px) {
+    .attribution {
+        gap: 40px;
+    }
+}
+
+.attribution>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.attribution>div>a {
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+    border: 1px solid var(--dark-blue);
+    padding: 10px 20px;
+    transition: color .5s;
+    border-radius: 6px;
+    position: relative;
+}
+
+.attribution>div>a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 102%;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    z-index: -1;
+    border-radius: 6px;
+    transition: width .5s;
+}
+
+.attribution>div>a:hover {
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+.attribution>div>a:hover::before {
+    width: 101%;
+}
+
+/* End Attribution */
